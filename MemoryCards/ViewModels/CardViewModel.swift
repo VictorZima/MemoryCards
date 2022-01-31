@@ -8,14 +8,14 @@
 import Combine
 
 final class CardViewModel: ObservableObject, Identifiable {
-    private let cardRepository = CardRepository()
-    @Published var studyCard: StudyCard
+    //private let cardRepository = CardRepository()
+    @Published var studyCard: StudyCardModel
     
     var id = ""
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(studyCard: StudyCard) {
+    init(studyCard: StudyCardModel) {
         self.studyCard = studyCard
         $studyCard
             .compactMap { $0.id }

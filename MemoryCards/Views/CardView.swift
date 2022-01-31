@@ -34,6 +34,5 @@ struct CardView: View {
                     flipped.toggle()
                 }
             }
-            
     }
 }

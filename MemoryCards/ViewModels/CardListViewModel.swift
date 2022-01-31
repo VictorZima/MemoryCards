@@ -23,15 +23,15 @@ final class CardListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func add(_ studyCard: StudyCard) {
+    func add(_ studyCard: StudyCardModel) {
         cardRepository.add(studyCard)
     }
     
-    func remove(_ studyCard: StudyCard) {
+    func remove(_ studyCard: StudyCardModel) {
         cardRepository.remove(studyCard)
     }
     
-    func update(_ studyCard: StudyCard) {
+    func update(_ studyCard: StudyCardModel) {
         cardRepository.update(studyCard)
     }
     

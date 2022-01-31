@@ -10,13 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         TabView {
-            CardListView(cardListViewModel: CardListViewModel())
-            .tabItem {
-                Image(systemName: "lanyardcard")
-                Text("Cards")
-            }
-            
-            KitListView()
+            CollectionListView(collectionListViewModel: CollectionListViewModel())
             .tabItem {
                 Image(systemName: "lanyardcard")
                 Text("Collections")

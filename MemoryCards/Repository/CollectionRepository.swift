@@ -1,19 +1,18 @@
 //
-//  CardRepository.swift
+//  CollectionRepository.swift
 //  MemoryCards
 //
-//  Created by VictorZima on 20/12/2021.
+//  Created by VictorZima on 08/01/2022.
 //
 
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Combine
 
-final class CardRepository: ObservableObject {
+final class CollectionRepository: ObservableObject {
     private let path = "memoryCards"
     private let store = Firestore.firestore()
-    
-    @Published var studyCards: [StudyCardModel] = []
+    @Published var collections: [CollectionModel] = []
     
     init() {
         get()
@@ -25,22 +24,22 @@ final class CardRepository: ObservableObject {
                 print(error)
                 return
             }
-            self.studyCards = snapshort?.documents.compactMap{
-                try? $0.data(as: StudyCardModel.self)
+            self.collections = snapshort?.documents.compactMap{
+                try? $0.data(as: CollectionModel.self)
             } ?? []
         }
     }
     
-    func add(_ studyCard: StudyCardModel) {
+    func add(_ collection: CollectionModel) {
         do {
-            _ = try store.collection(path).addDocument(from: studyCard)
+            _ = try store.collection(path).addDocument(from: collection)
         } catch {
             fatalError("Adding a study card failed")
         }
     }
     
-    func remove(_ studyCard: StudyCardModel) {
-        guard let documentId = studyCard.id else { return }
+    func remove(_ collection: CollectionModel) {
+        guard let documentId = collection.id else { return }
         store.collection(path).document(documentId).delete { error in
             if let error = error {
                 print("Unable to remove the card: \(error.localizedDescription)")
@@ -48,12 +47,13 @@ final class CardRepository: ObservableObject {
         }
     }
     
-    func update(_ studyCard: StudyCardModel) {
-        guard let documentId = studyCard.id else { return }
+    func update(_ collection: CollectionModel) {
+        guard let documentId = collection.id else { return }
         do {
-            try store.collection(path).document(documentId).setData(from: studyCard)
+            try store.collection(path).document(documentId).setData(from: collection)
         } catch {
             fatalError("Adding a study card failed")
         }
     }
 }
+

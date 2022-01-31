@@ -11,7 +11,7 @@ struct FormView: View {
     @State private var question: String = ""
     @State private var answer: String = ""
     
-    var didAddCard: (_ studyCard: StudyCard) -> Void
+    var didAddCard: (_ studyCard: StudyCardModel) -> Void
     
     var body: some View {
         NavigationView {
@@ -22,7 +22,7 @@ struct FormView: View {
                 }
                 
                 Button("Create Card") {
-                    let card = StudyCard(question: question, answer: answer)
+                    let card = StudyCardModel(question: question, answer: answer)
                     didAddCard(card)
                 }.disabled(question.isEmpty || answer.isEmpty).padding()
             }.navigationTitle("New Study Card")

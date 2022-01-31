@@ -7,11 +7,11 @@
 
 import FirebaseFirestoreSwift
 
-
 struct CollectionModel: Identifiable, Codable {
     @DocumentID var id: String?
     var title: String
     var description: String
-    var amount: Int
+    var amount: Int = 0
+    var passed: Bool = false
 }
 

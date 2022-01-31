@@ -15,7 +15,6 @@ struct CardListView: View {
     
     var body: some View {
         NavigationView {
-            
             VStack {
                 Toggle(isOn: $showPassed) { Text("\(showPassed ? "Hide" : "Show") passed questions") }
                 .padding()
@@ -49,11 +48,8 @@ struct CardListView: View {
                     }
                 }
             }
-            
-            
-            
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
     }
         
     private func delete(at offsets: IndexSet) {

@@ -1,5 +1,5 @@
 //
-//  CollectionView.swift
+//  KitView.swift
 //  MemoryCards
 //
 //  Created by VictorZima on 30/12/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CollectionView: View {
+struct KitView: View {
     var collectionViewModel: CollectionViewModel
     
     var body: some View {

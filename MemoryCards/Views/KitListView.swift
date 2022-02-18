@@ -1,5 +1,5 @@
 //
-//  CollectionListView.swift
+//  KitListView.swift
 //  MemoryCards
 //
 //  Created by VictorZima on 30/12/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CollectionListView: View {
+struct KitListView: View {
     
     @ObservedObject var collectionListViewModel: CollectionListViewModel
     @State private var showingForm = false
@@ -21,7 +21,7 @@ struct CollectionListView: View {
                         $0.collection.passed == showPassed }) { collectionVM in
                             
                             NavigationLink(destination: CardListView(cardListViewModel: CardListViewModel())) {
-                                CollectionView(collectionViewModel: collectionVM)
+                                KitView(collectionViewModel: collectionVM)
                             }
                         }
                         .onDelete(perform: delete)
@@ -58,6 +58,6 @@ struct CollectionListView: View {
 
 struct CollectionListView_Previews: PreviewProvider {
     static var previews: some View {
-        CollectionListView(collectionListViewModel: CollectionListViewModel())
+        KitListView(collectionListViewModel: CollectionListViewModel())
     }
 }

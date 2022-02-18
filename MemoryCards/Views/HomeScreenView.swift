@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeScreenView: View {
     var body: some View {
         TabView {
-            CollectionListView(collectionListViewModel: CollectionListViewModel())
+            KitListView(collectionListViewModel: CollectionListViewModel())
             .tabItem {
                 Image(systemName: "lanyardcard")
                 Text("Collections")

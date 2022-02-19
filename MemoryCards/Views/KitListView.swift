@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KitListView: View {
     
-    @ObservedObject var collectionListViewModel: KitListViewModel
+    @ObservedObject var kitListViewModel: KitListViewModel
     @State private var showingForm = false
     @State private var showPassed = false
     
@@ -17,7 +17,7 @@ struct KitListView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(collectionListViewModel.collectionViewModels.filter {
+                    ForEach(kitListViewModel.collectionViewModels.filter {
                         $0.collection.passed == showPassed }) { collectionVM in
                             
                             NavigationLink(destination: CardListView(cardListViewModel: CardListViewModel())) {
@@ -40,7 +40,7 @@ struct KitListView: View {
                         .overlay(Image(systemName: "plus").foregroundColor(.white))
                 }.sheet(isPresented: $showingForm) {
                     AddCollectionFormView { (collection) in
-                        collectionListViewModel.add(collection)
+                        kitListViewModel.add(collection)
                         showingForm = false
                     }
                 }
@@ -50,14 +50,14 @@ struct KitListView: View {
     }
         
     private func delete(at offsets: IndexSet) {
-        offsets.map { collectionListViewModel.collectionViewModels[$0].collection
+        offsets.map { kitListViewModel.collectionViewModels[$0].collection
                 
-        }.forEach(collectionListViewModel.remove)
+        }.forEach(kitListViewModel.remove)
     }
 }
 
 struct CollectionListView_Previews: PreviewProvider {
     static var previews: some View {
-        KitListView(collectionListViewModel: KitListViewModel())
+        KitListView(kitListViewModel: KitListViewModel())
     }
 }

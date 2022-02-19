@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct KitView: View {
-    var collectionViewModel: CollectionViewModel
+    var collectionViewModel: KitViewModel
     
     var body: some View {
         ZStack(alignment: .leading) {

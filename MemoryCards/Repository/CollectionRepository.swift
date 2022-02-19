@@ -12,7 +12,7 @@ import Combine
 final class CollectionRepository: ObservableObject {
     private let path = "memoryCards"
     private let store = Firestore.firestore()
-    @Published var collections: [CollectionModel] = []
+    @Published var collections: [KitModel] = []
     
     init() {
         get()
@@ -25,12 +25,12 @@ final class CollectionRepository: ObservableObject {
                 return
             }
             self.collections = snapshort?.documents.compactMap{
-                try? $0.data(as: CollectionModel.self)
+                try? $0.data(as: KitModel.self)
             } ?? []
         }
     }
     
-    func add(_ collection: CollectionModel) {
+    func add(_ collection: KitModel) {
         do {
             _ = try store.collection(path).addDocument(from: collection)
         } catch {
@@ -38,7 +38,7 @@ final class CollectionRepository: ObservableObject {
         }
     }
     
-    func remove(_ collection: CollectionModel) {
+    func remove(_ collection: KitModel) {
         guard let documentId = collection.id else { return }
         store.collection(path).document(documentId).delete { error in
             if let error = error {
@@ -47,7 +47,7 @@ final class CollectionRepository: ObservableObject {
         }
     }
     
-    func update(_ collection: CollectionModel) {
+    func update(_ collection: KitModel) {
         guard let documentId = collection.id else { return }
         do {
             try store.collection(path).document(documentId).setData(from: collection)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KitListView: View {
     
-    @ObservedObject var collectionListViewModel: CollectionListViewModel
+    @ObservedObject var collectionListViewModel: KitListViewModel
     @State private var showingForm = false
     @State private var showPassed = false
     
@@ -58,6 +58,6 @@ struct KitListView: View {
 
 struct CollectionListView_Previews: PreviewProvider {
     static var previews: some View {
-        KitListView(collectionListViewModel: CollectionListViewModel())
+        KitListView(collectionListViewModel: KitListViewModel())
     }
 }

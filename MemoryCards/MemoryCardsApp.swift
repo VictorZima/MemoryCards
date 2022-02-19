@@ -18,7 +18,6 @@ struct MemoryCardsApp: App {
     var body: some Scene {
         WindowGroup {
             HomeScreenView()
-            //CardListView(cardListViewModel: CardListViewModel())
         }
     }
 }

@@ -11,7 +11,7 @@ struct AddCollectionFormView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     
-    var didAddCollection: (_ collection: CollectionModel) -> Void
+    var didAddCollection: (_ collection: KitModel) -> Void
     
     var body: some View {
         NavigationView {
@@ -22,7 +22,7 @@ struct AddCollectionFormView: View {
                 }
                 
                 Button("Create Card") {
-                    let collection = CollectionModel(title: title, description: description)
+                    let collection = KitModel(title: title, description: description)
                     didAddCollection(collection)
                 }.disabled(title.isEmpty || description.isEmpty).padding()
             }.navigationTitle("New Study Card")

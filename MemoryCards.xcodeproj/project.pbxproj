@@ -89,13 +89,13 @@
 		2855C56C276FFDD900790B8F /* MemoryCards */ = {
 			isa = PBXGroup;
 			children = (
-				2855C56D276FFDD900790B8F /* MemoryCardsApp.swift */,
+				28834D8C27C16E9400344608 /* Home */,
+				28834D8327C09C4900344608 /* Kit */,
+				28834D8427C09C6400344608 /* Card */,
+				28834D8B27C16E5800344608 /* Profile */,
+				28834D8D27C16EB900344608 /* Achievements */,
 				2855C5882770350B00790B8F /* Repository */,
-				2855C58F2772AC9200790B8F /* ViewModels */,
-				2855C587277034FE00790B8F /* Models */,
-				2855C586277034DC00790B8F /* Views */,
-				2855C571276FFDDA00790B8F /* Assets.xcassets */,
-				2855C584277030B000790B8F /* GoogleService-Info.plist */,
+				28834D8E27C16ED800344608 /* SupportingFiles */,
 				2855C573276FFDDA00790B8F /* Preview Content */,
 			);
 			path = MemoryCards;
@@ -109,31 +109,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2855C586277034DC00790B8F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				285AF5122776C30800E35FA7 /* HomeScreenView.swift */,
-				286AD2282787E8B2004F65CA /* AchievementsView.swift */,
-				284BED4D277D5F0D00B7D08A /* KitListView.swift */,
-				284BED4F277DA2AC00B7D08A /* KitView.swift */,
-				2855C56F276FFDD900790B8F /* CardListView.swift */,
-				285AF50C277548A400E35FA7 /* CardView.swift */,
-				285AF51027756F8200E35FA7 /* FormView.swift */,
-				287F81092789407400ABBFDA /* AddCollectionFormView.swift */,
-				285AF5142776C4D700E35FA7 /* ProfileView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		2855C587277034FE00790B8F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2855C58B2770361400790B8F /* StudyCardModel.swift */,
-				284BED51277DA34100B7D08A /* KitModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		2855C5882770350B00790B8F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,15 +118,112 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		2855C58F2772AC9200790B8F /* ViewModels */ = {
+		28834D8327C09C4900344608 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				28834D8527C09C6F00344608 /* Model */,
+				28834D8627C09C7F00344608 /* View */,
+				28834D8727C09C8800344608 /* ViewModel */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		28834D8427C09C6400344608 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				28834D8A27C16D2100344608 /* Model */,
+				28834D8827C16D0C00344608 /* View */,
+				28834D8927C16D1700344608 /* ViewModel */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		28834D8527C09C6F00344608 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				284BED51277DA34100B7D08A /* KitModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28834D8627C09C7F00344608 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				284BED4D277D5F0D00B7D08A /* KitListView.swift */,
+				284BED4F277DA2AC00B7D08A /* KitView.swift */,
+				287F81092789407400ABBFDA /* AddCollectionFormView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28834D8727C09C8800344608 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				287F81052789375B00ABBFDA /* KitListViewModel.swift */,
+				287F81032789367600ABBFDA /* KitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28834D8827C16D0C00344608 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2855C56F276FFDD900790B8F /* CardListView.swift */,
+				285AF50C277548A400E35FA7 /* CardView.swift */,
+				285AF51027756F8200E35FA7 /* FormView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		28834D8927C16D1700344608 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				2855C58D2772AC8700790B8F /* CardListViewModel.swift */,
 				285AF50E277548FE00E35FA7 /* CardViewModel.swift */,
-				287F81052789375B00ABBFDA /* KitListViewModel.swift */,
-				287F81032789367600ABBFDA /* KitViewModel.swift */,
 			);
-			path = ViewModels;
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28834D8A27C16D2100344608 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2855C58B2770361400790B8F /* StudyCardModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28834D8B27C16E5800344608 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				285AF5142776C4D700E35FA7 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		28834D8C27C16E9400344608 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2855C56D276FFDD900790B8F /* MemoryCardsApp.swift */,
+				285AF5122776C30800E35FA7 /* HomeScreenView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		28834D8D27C16EB900344608 /* Achievements */ = {
+			isa = PBXGroup;
+			children = (
+				286AD2282787E8B2004F65CA /* AchievementsView.swift */,
+			);
+			path = Achievements;
+			sourceTree = "<group>";
+		};
+		28834D8E27C16ED800344608 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2855C584277030B000790B8F /* GoogleService-Info.plist */,
+				2855C571276FFDDA00790B8F /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

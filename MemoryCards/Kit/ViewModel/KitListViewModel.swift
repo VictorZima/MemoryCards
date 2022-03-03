@@ -2,37 +2,21 @@
 //  KitListViewModel.swift
 //  MemoryCards
 //
-//  Created by VictorZima on 08/01/2022.
+//  Created by VictorZima on 25/02/2022.
 //
 
-import Combine
+import Foundation
 
-final class KitListViewModel: ObservableObject {
-    @Published var collectionRepository = CollectionRepository()
-    @Published var collectionViewModels: [KitViewModel] = []
-    
-    private var cancellables: Set<AnyCancellable> = []
+class KitListViewModel {
     
     init() {
-        collectionRepository.$collections
-            .map { collections in
-                collections.map(KitViewModel.init)
-                
-            }
-            .assign(to: \.collectionViewModels, on: self)
-            .store(in: &cancellables)
+        fetchCurrentUser()
     }
     
-    func add(_ collection: KitModel) {
-        collectionRepository.add(collection)
+    private func fetchCurrentUser() {
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
+            return
+        }
+        
     }
-    
-    func remove(_ collection: KitModel) {
-        collectionRepository.remove(collection)
-    }
-    
-    func update(_ collection: KitModel) {
-        collectionRepository.update(collection)
-    }
-    
 }

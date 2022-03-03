@@ -6,18 +6,14 @@
 //
 
 import SwiftUI
-import Firebase
+//import Firebase
 
 @main
 struct MemoryCardsApp: App {
     
-    init() {
-        FirebaseApp.configure()
-    }
-    
     var body: some Scene {
         WindowGroup {
-            HomeScreenView()
+            ContentView()
         }
     }
 }

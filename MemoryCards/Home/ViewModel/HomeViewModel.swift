@@ -7,17 +7,7 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
-    @Published var isUserCurrentlyLoggedOut = false
+class HomeViewModel {
     
-    init() {
-        DispatchQueue.main.async {
-            self.isUserCurrentlyLoggedOut = FirebaseManager.shared.auth.currentUser?.uid == nil
-        }
-    }
-    
-    func handleSignOut() {
-        isUserCurrentlyLoggedOut.toggle()
-        try? FirebaseManager.shared.auth.signOut()
-    }
+
 }

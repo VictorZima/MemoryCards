@@ -8,8 +8,8 @@
 import Firebase
 
 struct KitModel {
-    var uid: String?
-//    var title: String
+    var uid: String
+    var title: String
 //    var description: String
 //    var amount: Int = 0
 //    var passed: Bool = false

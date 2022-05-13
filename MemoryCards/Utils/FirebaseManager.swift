@@ -10,6 +10,7 @@ import Firebase
 
 class FirebaseManager: NSObject {
     let auth: Auth
+    let firestore: Firestore
     
     static let shared = FirebaseManager()
     
@@ -17,6 +18,7 @@ class FirebaseManager: NSObject {
         FirebaseApp.configure()
         
         auth = Auth.auth()
+        firestore = Firestore.firestore()
         
         super.init()
     }

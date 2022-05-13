@@ -5,18 +5,18 @@
 //  Created by VictorZima on 25/02/2022.
 //
 
-import Foundation
+import SwiftUI
 
-class KitListViewModel {
+class KitListViewModel: ObservableObject {
+    
+    @Published var kits = [KitModel]()
     
     init() {
-        fetchCurrentUser()
+        fetchKits()
     }
     
-    private func fetchCurrentUser() {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else {
-            return
-        }
-        
+    func fetchKits() {
+        //kits = KitModel(uid: "111", title: "111")
     }
+
 }

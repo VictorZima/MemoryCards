@@ -7,16 +7,34 @@
 
 import SwiftUI
 
-
 struct KitListView: View {
+    @StateObject var kitList = KitListViewModel()
     
     var body: some View {
-        Text("--")
+        NavigationView {
+            ScrollView {
+                VStack() {
+                    ForEach (1..<6) { kit in
+                        KitView()
+                        //Text(kitList.title)
+                    }
+                }
+                .navigationTitle("My Collections")
+                .toolbar {
+                    Button {
+                        
+                    }
+                    label: {
+                        Text("+")
+                    }
+                }
+            }
+        }
+
     }
 }
 
 struct CollectionListView_Previews: PreviewProvider {
-    @State static var isUserCurrentlyLoggedOut = false
     
     static var previews: some View {
         KitListView()
